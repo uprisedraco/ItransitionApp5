@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ItransitionApp5.Models.MessagesView>
+@{
+	ViewData["Title"] = "Messages";
+	int i = 0;
+}
+
+<div class="container">
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col" width="5">#</th>
+				<th scope="col" width="20">From</th>
+				<th scope="col">Text</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var messages in Model)
+			{
+				<tr>
+					<th scope="row">@(++i)</th>
+					<td>@messages.Sender.UserName</td>
+					<td>@messages.MessageText</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

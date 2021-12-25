@@ -1,0 +1,49 @@
+﻿@model ItransitionApp5.Models.LoginViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authorization</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+@*	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/ItransitionApp5.styles.css" asp-append-version="true" />*@
+</head>
+<body>
+	<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+		<div class="row align-items-center g-lg-5 py-5">
+			<div class="col-lg-7 text-center text-lg-start">
+				<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
+				<h1>Sign in</h1>
+			</div>
+			<div class="col-md-10 mx-auto col-lg-5">
+				<form method="post" asp-controller="Account" asp-action="Login" class="p-4 p-md-5 border rounded-3 bg-light">
+					<div asp-validation-summary="ModelOnly"></div>
+					<div class="form-floating mb-3">
+						<input asp-for="Email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+						<span class="text-danger" asp-validation-for="Email"></span>
+						<label for="floatingInput">Email address</label>
+					</div>
+					<div class="form-floating mb-3">
+						<input asp-for="Password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+						<span class="text-danger" asp-validation-for="Password"></span>
+						<label for="floatingPassword">Password</label>
+					</div>
+					<div class="checkbox mb-3">
+						<label>
+							<input asp-for="RememberMe" type="checkbox"> Remember me
+						</label>
+					</div>
+					<button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+					<hr class="my-4">
+					<small class="text-muted">Don`t have an account? <a asp-controller="Account" asp-action="Register">Register</a></small>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+@*	<script src="~/js/site.js" asp-append-version="true"></script>*@
+</body>
+</html>

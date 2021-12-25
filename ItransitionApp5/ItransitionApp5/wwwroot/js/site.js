@@ -1,4 +1,11 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿function check_uncheck_checkbox(isChecked) {
+	if (isChecked) {
+		$('input[name="ids"]').each(function () {
+			this.checked = true;
+		});
+	} else {
+		$('input[name="ids"]').each(function () {
+			this.checked = false;
+		});
+	}
+}
